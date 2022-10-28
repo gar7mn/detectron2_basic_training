@@ -6,14 +6,14 @@ import pickle
 from detectron2.engine import  DefaultTrainer
 from detectron2.data.datasets import register_coco_instances
 #the config file paths can be gotten from the detectron2 model zoo on github
-config_file_path = " " #path to yaml file eg: faster_rcnn_R_50
+config_file_path = "" #path to yaml file eg: faster_rcnn_R_50
 checkpoint_url = ""   #path to yaml file eg: faster_rcnn_R_50
 device = "cuda"
 #dataset name
 train_dataset_name = "" #training dataset name in the quotes
 test_dataset_name = "" #test dataset name in the quotes
 #classes
-num_classes = 1 #set to the number of different types of objects in your dataset
+num_classes = 2 #set to the number of different types of objects in your dataset
 #set the image paths
 train_im_path = r"" #path in quotes
 test_im_path = r"" #path in quotes
@@ -50,3 +50,5 @@ def main():
         trainer.resume_or_load(resume=False)
         trainer.train()
 
+if __name__ == '__main__':
+    main()
